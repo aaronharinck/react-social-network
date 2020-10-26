@@ -1,0 +1,29 @@
+@value vars: "../../css/vars.module.css";
+@value greyish, whiteish, hoverColor, accent from vars;
+
+.userHeader {
+  display: flex;
+  align-items: baseline;
+}
+
+.pageTitle {
+  composes: subTitle from "../../css/typo.module.css";
+  padding-bottom: 2rem;
+}
+
+.subTitle {
+  composes: pageTitle;
+  padding-bottom: 0.2rem;
+}
+
+.userFollowers {
+  padding: 1.8rem;
+}
+
+.followItems {
+  display: flex;
+}
+
+.followItem + .followItem {
+  padding-left: 0.8rem;
+}

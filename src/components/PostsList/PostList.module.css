@@ -1,0 +1,15 @@
+.posts {
+}
+
+.posts__list {
+}
+
+.userHeader {
+  display: flex;
+  align-items: baseline;
+}
+
+.pageTitle {
+  composes: subTitle from "../../css/typo.module.css";
+  padding-bottom: 2rem;
+}

@@ -1,0 +1,18 @@
+@value vars: "../../css/vars.module.css";
+@value greyish, whiteish, hoverColor, accent from vars;
+
+.back {
+  composes: primaryText from "../../css/typo.module.css";
+  border: none;
+  background: none;
+  padding: 1.4rem;
+  align-items: center;
+  min-width: auto;
+  border: solid 0.2rem greyish;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.back:hover {
+  background: hoverColor;
+}

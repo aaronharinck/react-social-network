@@ -1,0 +1,58 @@
+@value vars: "../../css/vars.module.css";
+@value greyish, whiteish, hoverColor, accent from vars;
+
+.loginForm {
+  background: whiteish;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.subtitle {
+  composes: subTitle from "../../css/typo.module.css";
+}
+
+.button {
+  composes: primaryText from "../../css/typo.module.css";
+  background-color: accent;
+  border: none;
+  color: whiteish;
+  padding: 2rem 3rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0.2rem solid;
+  margin-top: 1.5rem;
+  transition: 0.2s background-color;
+}
+
+.button:hover {
+  background-color: hoverColor;
+  color: black;
+  border: 0.2rem solid #3879ff;
+}
+.labels {
+  display: flex;
+}
+
+.label {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border: 0.1rem solid greyish;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.inputColor {
+  composes: input;
+  padding: 0;
+  border: none;
+  background: whiteish;
+  min-width: 5rem;
+  min-height: 5rem;
+}

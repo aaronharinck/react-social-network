@@ -1,0 +1,35 @@
+@value vars: "../../css/vars.module.css";
+@value text from vars;
+.comment {
+  display: flex;
+  margin: 1rem 0;
+  align-items: baseline;
+}
+
+.colorBlock {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: baseline;
+  margin-right: 1.2rem;
+}
+
+.author {
+  composes: boldText from "../../css/typo.module.css";
+}
+
+.commentContent {
+  line-height: 120%;
+}
+
+.userLink {
+  text-decoration: none;
+  color: text;
+}
+
+.userLink:hover {
+  text-decoration: underline;
+}

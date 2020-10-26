@@ -1,0 +1,95 @@
+@value vars: "../../css/vars.module.css";
+@value greyish,background,hoverColor, text from vars;
+
+.post__link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  border: 0.2rem solid hoverColor;
+  margin-top: 0.5rem;
+}
+
+.post__link:hover {
+  background: hoverColor;
+}
+
+.post {
+  list-style-type: none;
+  padding: 2rem;
+  border: 0.2rem solid greyish;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.post__author__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.post__author__title {
+  font-weight: bold;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+/* kleurblokje, backgroundcolor zal dynamisch genomen worden */
+
+/* .post__author__title::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: black;
+  display: inline-block;
+  padding: .5rem;
+  margin-left: .5rem;
+}
+Nee toch niet -> Kan blijkbaar geen ::after via inline css veranderen*/
+
+.colorBlock {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.post__tags {
+  display: flex;
+  font-style: italic;
+}
+
+.post__tag::before {
+  content: "#";
+}
+
+.post__tag + .post__tag {
+  padding-left: 1rem;
+}
+
+.post__content {
+  padding: 1.4rem;
+  font-size: 2rem;
+  line-height: 130%;
+}
+
+.followButtonContainer {
+  z-index: 100;
+  display: block;
+  border: 0.2rem solid greyish;
+}
+.followButton {
+  padding: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.userLink {
+  text-decoration: none;
+  color: text;
+}
+
+.userLink:hover {
+  text-decoration: underline;
+}

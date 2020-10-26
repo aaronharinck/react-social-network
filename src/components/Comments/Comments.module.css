@@ -1,0 +1,7 @@
+.infoText {
+  composes: sideText from "../../css/typo.module.css";
+  padding: 0.8rem 0;
+}
+
+.comments {
+}

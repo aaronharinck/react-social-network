@@ -1,0 +1,41 @@
+/* Laad eerst de globale vars in */
+@value vars: "../css/vars.module.css";
+@value greyish, whiteish, text from vars;
+
+/* Maak specifieke vars voor deze module aan */
+:global(:root) {
+  --fontTitle: 2.4rem;
+  --fontBig: 2rem;
+  --fontNormal: 1.6rem;
+  --fontSmall: 1.4rem;
+  --fontWeightRegular: 400;
+  --fontWeightBold: 500;
+  --fontWeightExtraBold: 700;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/* export opgemaakte classes op basis van vars */
+.primaryText {
+  color: text;
+  font-size: var(--fontNormal);
+}
+
+.mainTitle {
+  color: text;
+  font-size: var(--fontTitle);
+}
+
+.subTitle {
+  color: text;
+  font-size: var(--fontBig);
+}
+
+.sideText {
+  color: greyish;
+  font-size: var(--fontSmall);
+}
+
+.boldText {
+  font-weight: var(--fontWeightBold);
+}

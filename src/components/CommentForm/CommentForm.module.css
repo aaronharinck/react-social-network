@@ -1,0 +1,12 @@
+.commentForm {
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1.4rem;
+  padding-left: 0.7em;
+  border-bottom: 0.1rem solid black;
+  margin-top: 0.5rem;
+}
