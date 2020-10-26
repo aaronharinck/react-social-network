@@ -1,6 +1,5 @@
 import PostModel from "../../models/PostModel";
 import UserModel from "../../models/UserModel";
-import CommentModel from "../../models/CommentModel";
 import DataStore from "../../stores/DataStore";
 
 const dataStore = new DataStore();
@@ -10,13 +9,13 @@ test("Create a post with all params", () => {
     id: "userid1",
     name: "user4&@",
     store: dataStore,
-    userColor: "#4A90E2"
+    userColor: "#4A90E2",
   });
   const post = new PostModel({
     content: "hey",
     user: user,
     userColor: "#4A90E2",
-    tags: ["funny", "cats"]
+    tags: ["funny", "cats"],
   });
   expect(post.content).toBe("hey");
   expect(post.user.name).toBe("user4");
@@ -28,11 +27,11 @@ test("Create a post with no optional params", () => {
   const user5 = new UserModel({
     name: "user5&@",
     store: dataStore,
-    userColor: "#4A90E2"
+    userColor: "#4A90E2",
   });
   const post = new PostModel({
     content: '"Ik ben blij", vertelde hij!',
-    user: user5
+    user: user5,
   });
   expect(post.content).toBe('"Ik ben blij", vertelde hij!');
   expect(post.user.name).toBe("user5");
@@ -49,11 +48,11 @@ test("Create a post with a username that is not allowed", () => {
   const userWrong = new UserModel({
     name: `uSeR5&")$ù=p4tRç&é"(§è!çà`,
     store: dataStore,
-    userColor: "#4A90E2"
+    userColor: "#4A90E2",
   });
   const post = new PostModel({
     content: "Ik ben een scriptkiddie!",
-    user: userWrong
+    user: userWrong,
   });
   expect(post.content).toBe("Ik ben een scriptkiddie!");
   expect(post.user.name).toBe("user5p4tr");
@@ -71,7 +70,7 @@ test("post must have a user", () => {
 test("Post must have some conent", () => {
   const userOnly = new UserModel({
     name: "userOnly",
-    store: dataStore
+    store: dataStore,
   });
   expect(() => new PostModel({ user: userOnly })).toThrow(
     "A post must have some content"
