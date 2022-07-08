@@ -13,7 +13,7 @@ const Post = ({
   userName,
   userColor,
   content,
-  isSpecificPost
+  isSpecificPost,
 }) => {
   const { uiStore } = useStores();
   const [, setFollowing] = useState(false);
@@ -29,13 +29,13 @@ const Post = ({
         <button
           className={style.followButton}
           onClick={() =>
-            setFollowing(currentState => ({
+            setFollowing((currentState) => ({
               ...currentState,
-              updateButton: currentUser.followUser(user)
+              updateButton: currentUser.followUser(user),
             }))
           }
         >
-          {!currentUser.isFollowing(user) ? "+follow" : "-unfollow"}
+          {!currentUser.isFollowing(user) ? "+ follow" : "- unfollow"}
         </button>
       </div>
     );
@@ -51,7 +51,7 @@ const Post = ({
           style={{
             width: "2rem",
             height: "2rem",
-            background: userColor
+            background: userColor,
           }}
         ></span>
         <p>{userName}</p>
@@ -66,7 +66,7 @@ const Post = ({
             style={{
               width: "2rem",
               height: "2rem",
-              background: userColor
+              background: userColor,
             }}
           ></span>
           <p>{userName}</p>
@@ -87,7 +87,7 @@ const Post = ({
       </div>
       <div className={style.post__body}>
         <div className={style.post__tags}>
-          {tags.map(tag => (
+          {tags.map((tag) => (
             <div className={style.post__tag} key={tag}>
               {tag}
             </div>
@@ -119,7 +119,7 @@ Post.propTypes = {
   userName: PropTypes.string.isRequired,
   userColor: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  isSpecificPost: PropTypes.bool.isRequired
+  isSpecificPost: PropTypes.bool.isRequired,
 };
 
 export default Post;
