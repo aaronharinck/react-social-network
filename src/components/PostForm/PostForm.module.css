@@ -1,0 +1,33 @@
+@value vars: "../../css/vars.module.css";
+@value lightText, borderColor, whiteish, minDesktopSize from vars;
+
+.subtitle {
+  composes: subtitle from "../../css/typo.module.css";
+}
+
+.form {
+  margin: var(--spacer) 0 var(--spacerBig);
+}
+
+.form__input {
+  width: 100%;
+  padding: var(--spacerSmall) var(--spacer);
+  border: 0.2rem solid borderColor;
+  border-radius: var(--spacerBigger);
+  font-size: var(--fsBig);
+  margin-top: var(--spacerSmaller);
+}
+
+.disabled {
+  color: lightText;
+  cursor: not-allowed;
+  background: whiteish;
+}
+
+@media (min-width: minDesktopSize) {
+  .form {
+    max-width: 80ch;
+    margin: var(--spacerBiggest) auto var(--spacerBig);
+    padding-top: var(--spacerSmall);
+  }
+}
