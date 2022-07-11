@@ -15,13 +15,8 @@ const Comments = ({ postId }) => {
   }
   return useObserver(() => (
     <>
-      {uiStore.currentUser === undefined ? (
-        <p className={style.infoText}>Login to comment</p>
-      ) : (
-        <CommentForm postId={postId} />
-      )}
-      <ul className="">
-        {post.comments.map(comment => (
+      <ul>
+        {post.comments.map((comment) => (
           <Comment
             key={comment.id}
             id={comment.id}
@@ -31,6 +26,13 @@ const Comments = ({ postId }) => {
           />
         ))}
       </ul>
+      {uiStore.currentUser === undefined ? (
+        <a href="/#loginForm" className="removeDecoration">
+          <p className={style.infoText}>Create a session before commenting</p>
+        </a>
+      ) : (
+        <CommentForm postId={postId} />
+      )}
     </>
   ));
 };
