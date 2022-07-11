@@ -1,7 +1,36 @@
+/* Maak specifieke vars voor deze module aan */
+:global(:root) {
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  --fsBiggest: 4rem;
+  --fsBigger: 3.2rem;
+  --fsBig: 2rem;
+  --fsNormal: 1.6rem;
+  --fsSmall: 1.4rem;
+
+  --fontWeightRegular: 400;
+  --fontWeightBold: 700;
+  --fontWeightExtraBold: 900;
+
+  --spacerBiggest: 4.6rem;
+  --spacerBigger: 3.6rem;
+  --spacerBig: 3rem;
+  --spacer: 2.4rem;
+  --spacerSmall: 1.8rem;
+  --spacerSmaller: 1.2rem;
+  --spacerSmallest: 0.6rem;
+}
+
 /* Single vars */
 @value greyish: #979797;
 @value background: white;
+@value darkBackground: #F5F5F5;
 @value hoverColor: whitesmoke;
-@value whiteish: whitesmoke;
+@value whiteish: #fbfcfd;
+@value borderColor: #DCE5F0;
 @value text: black;
+@value lightText: #474747;
+@value darkColor: lightText;
 @value accent: #3879ff;
+@value minDesktopSize: 850px;
