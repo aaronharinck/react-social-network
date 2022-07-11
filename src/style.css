@@ -5,6 +5,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 /* stylelint-disable */
@@ -16,39 +18,52 @@ html {
 /* stylelint-enable */
 
 body {
-  height: 100vh;
-  font-size: 1.4rem;
-  margin: 0;
+  font-size: var(--fsNormal);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Inter", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: grid;
 }
 
 .container {
   display: flex;
   flex-flow: column;
-  max-width: 96rem;
+  max-width: 111.4rem;
   margin: 0 auto;
-  /*grid-template-rows: 8rem auto 5rem;*/
+  padding: 0 var(--spacerSmallest);
   background-color: var(--background);
-}
-
-.form {
-  display: flex;
-  /* background-color: #cfd8dc; */
-  padding: 1rem;
-}
-
-.form__input {
-  width: 100%;
-  padding: 1rem 2rem;
-  border: none;
-  font-size: 1.4rem;
-  padding-left: 0.7em;
-  border-bottom: 0.1rem solid black;
 }
 
 .hidden {
   display: none;
+}
+
+.removeDecoration {
+  text-decoration: none;
+}
+
+#loginForm:target {
+  border: 0.5rem solid #3879ff;
+  transform: scale(102%) rotate(3deg);
+  transition: 0.3s ease transform;
+}
+
+.footer {
+  padding: var(--spacerBigger) var(--spacerSmall);
+  background-color: #fbfcfd;
+  border-top: 0.2rem solid #dce5f0;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #3879ff;
 }

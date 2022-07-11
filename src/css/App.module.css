@@ -1,15 +1,30 @@
-.header__title {
-  padding-top: 1.5rem;
+@value vars: "../css/vars.module.css";
+@value text from vars;
+
+.header {
+  display: flex;
+  padding-top: var(--spacerSmall);
+  justify-content: space-between;
+  align-items: center;
 }
 
-.pageTitle {
-  composes: subTitle from "./typo.module.css";
-  padding-bottom: 2rem;
+.logoSymbol {
+  margin-right: var(--spacerSmallest);
 }
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* .pageTitle {
+  composes: subtitle from "./typo.module.css";
+  padding-bottom: var(--fsBig);
+} */
 
 .title__link {
-  color: black;
+  color: text;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: var(--fsBig);
   font-weight: bold;
 }
