@@ -31,8 +31,7 @@ const CommentForm = ({ postId }) => {
 
   return useObserver(() => (
     <form onSubmit={handleFormSubmit}>
-      <section className={style.commentForm}>
-        <h3 className="hidden">comments</h3>
+      <div className={style.commentForm}>
         <label htmlFor="content"></label>
         <input
           className={style.formInput}
@@ -42,7 +41,7 @@ const CommentForm = ({ postId }) => {
           value={content}
           onChange={(e) => setContent(e.currentTarget.value)}
         />
-      </section>
+      </div>
     </form>
   ));
 };

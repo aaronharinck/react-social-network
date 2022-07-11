@@ -1,14 +1,10 @@
-@value vars: "../../css/vars.module.css";
-@value greyish, whiteish, hoverColor, accent from vars;
-
-.userHeader {
-  display: flex;
-  align-items: baseline;
+.userContainer {
+  max-width: 80ch;
+  margin: 0 auto;
 }
 
 .pageTitle {
-  composes: subTitle from "../../css/typo.module.css";
-  padding-bottom: 2rem;
+  composes: subtitle from "../../css/typo.module.css";
 }
 
 .subTitle {

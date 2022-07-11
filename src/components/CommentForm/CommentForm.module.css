@@ -1,12 +1,11 @@
-.commentForm {
-}
+@value vars: "../../css/vars.module.css";
+@value borderColor from vars;
 
 .formInput {
   width: 100%;
-  padding: 1rem 2rem;
-  border: none;
-  font-size: 1.4rem;
-  padding-left: 0.7em;
-  border-bottom: 0.1rem solid black;
-  margin-top: 0.5rem;
+  padding: var(--spacerSmall);
+  font-size: var(--fsNormal);
+  border: 0.1rem solid borderColor;
+  border-radius: var(--spacerSmaller);
+  margin-top: var(--spacerSmallest);
 }

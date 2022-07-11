@@ -16,47 +16,45 @@ const User = () => {
   }
   return (
     <>
-      <div>
-        {specificUser ? (
-          <div>
-            <div className={style.userHeader}>
-              <BackLink />
-              <h2 className={style.pageTitle}>User - {name}'s posts</h2>
-            </div>
-            {specificUser.following.length > 0 && (
-              <div className={style.userFollowers}>
-                <p className={style.subTitle}>{name} is following:</p>
-                <ul className={style.followItems}>
-                  {specificUser.following.map(follower => (
-                    <li
-                      key={follower.id}
-                      id={follower.id}
-                      className={style.followItem}
-                    >
-                      {follower.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <div className={style.userPost}>
-              {specificUser.posts.map(post => (
-                <Post
-                  key={post.id}
-                  id={post.id}
-                  tags={post.tags}
-                  user={post.user}
-                  userName={post.user.name}
-                  userColor={post.user.userColor}
-                  content={post.content}
-                />
-              ))}
-            </div>
+      {specificUser ? (
+        <div className={style.userContainer}>
+          <div className={style.userHeader}>
+            <BackLink />
+            <h2 className={style.pageTitle}>User - {name}'s posts</h2>
           </div>
-        ) : (
-          <Redirect to="/" />
-        )}
-      </div>
+          {specificUser.following.length > 0 && (
+            <div className={style.userFollowers}>
+              <p className={style.subTitle}>{name} is following:</p>
+              <ul className={style.followItems}>
+                {specificUser.following.map((follower) => (
+                  <li
+                    key={follower.id}
+                    id={follower.id}
+                    className={style.followItem}
+                  >
+                    {follower.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div className={style.userPost}>
+            {specificUser.posts.map((post) => (
+              <Post
+                key={post.id}
+                id={post.id}
+                tags={post.tags}
+                user={post.user}
+                userName={post.user.name}
+                userColor={post.user.userColor}
+                content={post.content}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <Redirect to="/" />
+      )}
     </>
   );
 };
