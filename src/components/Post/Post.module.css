@@ -1,25 +1,29 @@
 @value vars: "../../css/vars.module.css";
-@value greyish,background,hoverColor, text from vars;
+@value whiteish, background, background, hoverColor, borderColor, text, lightText, accent from vars;
 
 .post__link {
   display: block;
   text-decoration: none;
-  color: black;
-  padding: 1rem;
-  border: 0.2rem solid hoverColor;
-  margin-top: 0.5rem;
+  color: text;
+  padding: var(--spacerSmall) var(--spacerBig);
+  border: 0.1rem solid borderColor;
+  border-radius: var(--spacerSmaller);
+  background-color: background;
+  margin: var(--spacerSmallest) 0;
 }
 
 .post__link:hover {
-  background: hoverColor;
+  background-color: hoverColor;
 }
 
 .post {
   list-style-type: none;
-  padding: 2rem;
-  border: 0.2rem solid greyish;
-  font-size: 1.6rem;
-  margin: 1rem 0;
+  padding: var(--spacer) var(--spacerBiggest);
+  margin: var(--spacer) 0;
+  border: 0.1rem solid borderColor;
+  border-radius: var(--spacer);
+  background-color: whiteish;
+  overflow-wrap: break-word;
 }
 
 .post__author__container {
@@ -53,6 +57,10 @@ Nee toch niet -> Kan blijkbaar geen ::after via inline css veranderen*/
   margin-right: 1rem;
 }
 
+.post__body {
+  margin-bottom: var(--spacerSmall);
+}
+
 .post__tags {
   display: flex;
   font-style: italic;
@@ -67,22 +75,44 @@ Nee toch niet -> Kan blijkbaar geen ::after via inline css veranderen*/
 }
 
 .post__content {
-  padding: 1.4rem;
-  font-size: 2rem;
-  line-height: 130%;
+  padding: var(--spacerSmaller) 0;
+  font-size: var(--fsBig);
 }
 
 .followButtonContainer {
   z-index: 100;
   display: block;
-  border: 0.2rem solid greyish;
 }
+
 .followButton {
-  padding: 1.2rem;
-  background: none;
+  padding: var(--spacerSmallest) var(--spacerSmaller);
+  background: background;
   border: none;
-  font-size: 1.6rem;
+  border: 0.1rem solid borderColor;
+  border-radius: var(--spacer);
+  font-size: var(--fsNormal);
   cursor: pointer;
+}
+
+.followButton:hover {
+  background-color: hoverColor;
+}
+
+.followButtonFalse {
+  background-color: accent;
+  color: whiteish;
+}
+
+.followButtonFalse:hover {
+  color: accent;
+}
+
+.followButtonTrue {
+  color: lightText;
+}
+
+.followButtonTrue:hover {
+  color: red;
 }
 
 .userLink {

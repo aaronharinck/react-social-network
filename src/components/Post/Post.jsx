@@ -27,7 +27,11 @@ const Post = ({
     followButton = (
       <div className={style.followButtonContainer}>
         <button
-          className={style.followButton}
+          className={
+            !currentUser.isFollowing(user)
+              ? `${style.followButton} ${style.followButtonFalse}`
+              : `${style.followButton} ${style.followButtonTrue}`
+          }
           onClick={() =>
             setFollowing((currentState) => ({
               ...currentState,
@@ -40,9 +44,10 @@ const Post = ({
       </div>
     );
   } else {
-    followButton = "";
+    followButton = null;
   }
 
+  // displayAuthor for a specific post
   if (name === userName) {
     displayAuthor = (
       <div className={style.post__author__title}>
@@ -52,12 +57,14 @@ const Post = ({
             width: "2rem",
             height: "2rem",
             background: userColor,
+            borderRadius: "0.5rem",
           }}
         ></span>
         <p>{userName}</p>
       </div>
     );
   } else {
+    // displayAuthor for regular posts
     displayAuthor = (
       <Link to={`/user/${userName}`} className={style.userLink}>
         <div className={style.post__author__title}>
@@ -67,6 +74,7 @@ const Post = ({
               width: "2rem",
               height: "2rem",
               background: userColor,
+              borderRadius: "0.5rem",
             }}
           ></span>
           <p>{userName}</p>
