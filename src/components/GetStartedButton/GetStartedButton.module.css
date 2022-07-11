@@ -1,0 +1,17 @@
+@value vars: "../../css/vars.module.css";
+@value text, borderColor, whiteish, hoverColor from vars;
+
+.gsButton {
+  text-decoration: none;
+  padding: var(--spacerSmaller) var(--spacer);
+  color: text;
+  background: whiteish;
+  border: 0.1rem solid borderColor;
+  border-radius: var(--spacer);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.gsButton:hover {
+  background-color: hoverColor;
+  color: accent;
+}
