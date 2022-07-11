@@ -2,9 +2,9 @@ import React from "react";
 import Post from "../Post/Post";
 import { useObserver } from "mobx-react-lite";
 import { useStores } from "../../hooks/UseStores";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import BackLink from "../BackLink";
-import style from "./PostList.module.css";
+import style from "./PostsList.module.css";
 
 const PostsList = () => {
   const { dataStore } = useStores();
@@ -17,7 +17,7 @@ const PostsList = () => {
     console.log(dataStore.getPostById(id));
     specificPost = dataStore.getPostById(id);
     console.log(specificPost);
-    console.log(specificPost);
+    console.log(`ur_lid: ${id}`);
     //posts = dataStore.posts.id;
   }
 
@@ -25,13 +25,14 @@ const PostsList = () => {
 
   return useObserver(() => (
     <section className={style.posts}>
-      <h3 className="hidden">Post {id ? `${id}` : `no specific id found`}</h3>
       {specificPost ? (
         <>
           <div className={style.userHeader}>
             <BackLink />
-            <h2 className={style.pageTitle}>Specific post</h2>
           </div>
+          <h2 className={style.subtitle}>
+            {id ? `Specific post` : `no specific id found`}
+          </h2>
           <Post
             key={specificPost.id}
             id={specificPost.id}
@@ -44,20 +45,29 @@ const PostsList = () => {
           />
         </>
       ) : (
-        <ul className={style.posts__list}>
-          {[...dataStore.posts].reverse().map((post) => (
-            <Post
-              key={post.id}
-              id={post.id}
-              tags={post.tags}
-              user={post.user}
-              userName={post.user.name}
-              userColor={post.user.userColor}
-              content={post.content}
-              isSpecificPost={isSpecificPost}
-            />
-          ))}
-        </ul>
+        <>
+          {id && (
+            <p className={style.errorText}>
+              Could not find post (with id: {id}){" "}
+              <Link to="/">Return to homepage </Link>
+            </p>
+          )}
+          <h2 className={style.subtitle}>Community posts</h2>
+          <ul className={style.posts__list}>
+            {[...dataStore.posts].reverse().map((post) => (
+              <Post
+                key={post.id}
+                id={post.id}
+                tags={post.tags}
+                user={post.user}
+                userName={post.user.name}
+                userColor={post.user.userColor}
+                content={post.content}
+                isSpecificPost={isSpecificPost}
+              />
+            ))}
+          </ul>
+        </>
       )}
     </section>
   ));
