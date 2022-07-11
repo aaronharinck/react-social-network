@@ -1,0 +1,88 @@
+@value vars: "../../css/vars.module.css";
+@value lightText, whiteish, borderColor, text, darkBackground, accent, minDesktopSize from vars;
+
+.introHeadlineLoginPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--spacer) 0 var(--spacerBiggest) 0;
+  gap: var(--spacerBiggest);
+}
+
+.headlineContainer {
+  flex: 3;
+}
+
+.headline {
+  font-size: var(--fsBiggest);
+  font-weight: var(--fontWeightBold);
+  line-height: 1.1;
+  margin-bottom: var(--spacer);
+}
+
+.headlineHighlighted {
+  color: accent;
+}
+
+.headlineIntroText {
+  color: lightText;
+  max-width: 45ch;
+}
+
+.headlineIntroText strong {
+  color: text;
+}
+
+.introCardsPart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacerSmall);
+  margin-bottom: var(--spacer);
+  align-items: center;
+}
+
+.card {
+  flex: 1;
+  border-radius: var(--spacer);
+  background-color: whiteish;
+  border: 0.1rem solid borderColor;
+  padding: var(--spacerSmall) var(--spacer);
+  max-width: 60ch;
+}
+
+.cardTitle {
+  font-size: var(--fsBig);
+  font-weight: var(--fontWeightBold);
+  margin-bottom: var(--spacerSmaller);
+}
+
+.cardText {
+  color: lightText;
+}
+
+.fullWidthIgnoreContainer {
+  background-color: darkBackground;
+  padding: var(--spacerSmall) var(--spacerSmall);
+  border-top-left-radius: var(--spacerBig);
+  border-top-right-radius: var(--spacerBig);
+}
+
+@media (min-width: minDesktopSize) {
+  .introHeadlineLoginPart {
+    flex-direction: row;
+  }
+
+  .introCardsPart {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .fullWidthIgnoreContainer {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: calc(var(--spacerBiggest) * -2);
+    padding: var(--spacerBiggest) 0 var(--spacerBig);
+    border-top-left-radius: var(--spacerBiggest);
+    border-top-right-radius: var(--spacerBiggest);
+  }
+}
