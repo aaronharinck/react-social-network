@@ -1,58 +1,76 @@
 @value vars: "../../css/vars.module.css";
-@value greyish, whiteish, hoverColor, accent from vars;
+@value greyish, whiteish, hoverColor, borderColor, lightText, darkColor, accent from vars;
 
 .loginForm {
-  background: whiteish;
-  margin: 0 auto;
-  padding: 3rem;
   display: flex;
+  background: whiteish;
+  border: 0.2rem solid borderColor;
+  border-radius: 3.5rem;
+  padding: var(--spacer) var(--spacerBigger);
   flex-flow: column;
+  flex: 2;
 }
 
 .subtitle {
-  composes: subTitle from "../../css/typo.module.css";
+  composes: subtitle from "../../css/typo.module.css";
+  font-size: var(--fsBig);
+  padding: var(--spacerSmall) 0 var(--spacerSmallest) 0;
+}
+
+.infoText {
+  padding-bottom: var(--spacerSmall);
 }
 
 .button {
   composes: primaryText from "../../css/typo.module.css";
+  margin: var(--spacerSmall) 0;
+  padding: var(--spacerSmall) var(--spacerBig);
+  border: 0.2rem solid;
+  border-radius: var(--spacerBig);
   background-color: accent;
-  border: none;
   color: whiteish;
-  padding: 2rem 3rem;
+  font-weight: var(--fontWeightBold);
   text-decoration: none;
   cursor: pointer;
-  border: 0.2rem solid;
-  margin-top: 1.5rem;
-  transition: 0.2s background-color;
+  transition: 0.3s ease background-color;
 }
 
 .button:hover {
   background-color: hoverColor;
-  color: black;
-  border: 0.2rem solid #3879ff;
-}
-.labels {
-  display: flex;
+  color: accent;
+  border: 0.2rem solid accent;
 }
 
 .label {
-  margin: 1rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-top: var(--spacerSmallest);
+  font-size: var(--fsSmall);
 }
 
 .input {
-  border: 0.1rem solid greyish;
-  margin: 0 1rem;
-  padding: 1.5rem;
-  font-size: 1.4rem;
+  border: 0.1rem solid darkColor;
+  border-radius: var(--spacerSmaller);
+  margin: var(--spacerSmallest) 0;
+  padding: var(--spacerSmall);
+  font-size: var(--fsSmall);
 }
 
 .inputColor {
-  composes: input;
-  padding: 0;
+  /* composes: input;  */
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: var(--spacerSmallest) 0;
   border: none;
-  background: whiteish;
-  min-width: 5rem;
-  min-height: 5rem;
+  border-radius: var(--spacerSmaller);
+  background: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: 0.1rem solid darkColor; /*change color of the swatch border here*/
+  border-radius: var(--spacerSmaller);
 }

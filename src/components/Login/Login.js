@@ -8,7 +8,7 @@ const Login = () => {
   const [userColor, setUserColor] = useState("#ffffff");
   const { dataStore, uiStore } = useStores();
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (name !== "") {
       const u = new UserModel({ name, store: dataStore, userColor });
@@ -20,11 +20,14 @@ const Login = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit} className={style.loginForm}>
-        <p className={style.subtitle}>Login to post</p>
+      <form onSubmit={handleSubmit} className={style.loginForm} id="loginForm">
+        <p className={style.subtitle}>Create a session to start engaging</p>
+        <p className={style.infoText}>
+          Pick a username and color for this session
+        </p>
         <div className={style.labels}>
           <label htmlFor="name" className={style.label}>
-            Pick a username
+            Username
             <input
               type="text"
               className={style.input}
@@ -32,22 +35,27 @@ const Login = () => {
               name="name"
               placeholder="JohnDoe24"
               value={name}
-              onChange={e => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
+              required
             />
           </label>
           <label htmlFor="userColor" className={style.label}>
-            Pick a color
+            Color
             <input
               type="color"
               className={style.inputColor}
               id="userColor"
               name="userColor"
               value={userColor}
-              onChange={e => setUserColor(e.target.value)}
+              onChange={(e) => setUserColor(e.target.value)}
             />
           </label>
         </div>
-        <input type="submit" value="Login" className={style.button} />
+        <input
+          type="submit"
+          value="Create a session"
+          className={style.button}
+        />
       </form>
     </>
   );
