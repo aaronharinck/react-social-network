@@ -11,7 +11,7 @@ const BackLink = () => {
         history.goBack();
       }}
     >
-      &larr; back
+      &larr; Back
     </button>
   );
 };
