@@ -1,0 +1,44 @@
+@value vars: "../../css/vars.module.css";
+@value greyish, whiteish, hoverColor, borderColor, lightText, darkColor, darkBackground, accent from vars;
+
+.posts {
+  max-width: 80ch;
+  margin: 0 auto;
+  padding-bottom: var(--spacerBig);
+}
+
+.posts__list {
+}
+
+.userHeader {
+  display: flex;
+  align-items: baseline;
+}
+
+.pageTitle {
+  composes: subtitle from "../../css/typo.module.css";
+  padding-bottom: var(--spacerSmall);
+}
+
+.subtitle {
+  composes: subtitle from "../../css/typo.module.css";
+}
+.errorText {
+  composes: boldText from "../../css/typo.module.css";
+  padding: var(--spacer);
+  margin: var(--spacerBigger) 0 var(--spacerBiggest);
+  font-size: var(--fsBig);
+  border: 0.1rem solid borderColor;
+  border-radius: var(--spacerSmall);
+  background-color: darkBackground;
+  overflow-wrap: break-word;
+}
+
+.errorText a {
+  color: accent;
+  text-decoration: none;
+}
+
+.errorText a:hover {
+  text-decoration: underline;
+}
