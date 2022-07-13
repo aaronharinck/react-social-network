@@ -34,6 +34,7 @@ const Login = () => {
               id="name"
               name="name"
               placeholder="JohnDoe24"
+              maxlength="30"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required

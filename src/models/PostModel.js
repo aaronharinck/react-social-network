@@ -8,7 +8,7 @@ class PostModel {
     userColor,
     tags = false,
     picture = false,
-    id = v4()
+    id = v4(),
   }) {
     if (!user) {
       throw new Error("A post must have a user");
@@ -31,7 +31,7 @@ class PostModel {
   _sanitizeUsername(user) {
     // kan later msn nog in een sanitize() func omgezet worden voor herbruikbaarheid
     console.log("user: " + user);
-    const sanitizedUser = user.match(/[A-Z-a-z-0-9]/g); // haal alleen de toegestane karakters eruit bv ['u','s','r','1']
+    const sanitizedUser = user.substring(0, 30).match(/[A-Z-a-z-0-9]/g); // trim tot max 30 karakters en haal alleen de toegestane eruit bv ['u','s','r','1']
     return sanitizedUser.join("").toLowerCase(); // combine de karakters naar 1 woord bv 'usr1'
   }
 
@@ -52,7 +52,7 @@ decorate(PostModel, {
   _sanitizeUsername: action,
   linkUser: action,
   linkComment: action,
-  comments: observable
+  comments: observable,
   // unread: observable,
   // setUnread: action
 });
