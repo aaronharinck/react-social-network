@@ -28,35 +28,46 @@ const u2 = new UserModel({
 // add example posts with user ref
 const p1 = new PostModel({
   id: "postseed-a74ade11-a56b-44e5-84ba-5836a7724731",
-  content: "Hey",
-  tags: ["funny", "food"],
+  content: "Hallokes",
+  tags: ["funny", "greeting"],
   user: u1,
 });
 
 const p2 = new PostModel({
   id: "postseed-e83e0520-3c5f-49a4-aed1-89a1e866f8a6",
-  content: "Hallokes",
-  tags: ["funny", "food"],
+  content: "Hey, what's your favorite food?",
+  tags: ["casual", "food"],
   user: u2,
 });
 
-const c1 = new CommentModel({
-  id: "commentseed-a74ade11-a56b-44e5-84ba-5836a7724731",
-  content:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis ipsum vitae leo dictum, eget vehicula nisi imperdiet. Ah such a classic!",
-  post: p1,
-  user: u2,
-});
+const seedAndLinkComments = () => {
+  new CommentModel({
+    id: "commentseed-a74ade11-a56b-44e5-84ba-5836a7724731",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis ipsum vitae leo dictum, eget vehicula nisi imperdiet. Ah such a classic!",
+    post: p1,
+    user: u2,
+  });
 
-const c2 = new CommentModel({
-  id: "commentseed-e83e0520-3c5f-49a4-aed1-89a1e866f8a6",
-  content: "Whatsupp?",
-  post: p1,
-  user: u1,
-});
+  new CommentModel({
+    id: "commentseed-e83e0520-3c5f-49a4-aed1-89a1e866f8a6",
+    content: "Whatsupp?",
+    post: p1,
+    user: u1,
+  });
+
+  new CommentModel({
+    id: "commentseed-bce542d2-3152-46ee-81f2-66cef6f9d064",
+    content: "Pizza!",
+    post: p2,
+    user: u1,
+  });
+};
 
 // seed some posts
 stores.dataStore.seed([p1, p2]);
+// seed some comments
+seedAndLinkComments();
 
 // Extra example posts (old)
 
