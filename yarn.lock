@@ -42,7 +42,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/compat-data@npm:7.17.10, @babel/compat-data@npm:^7.13.11, @babel/compat-data@npm:^7.17.10":
+"@babel/compat-data@npm:7.18.8":
+  version: 7.18.8
+  resolution: "@babel/compat-data@npm:7.18.8"
+  checksum: 3096aafad74936477ebdd039bcf342fba84eb3100e608f3360850fb63e1efa1c66037c4824f814d62f439ab47d25164439343a6e92e9b4357024fdf571505eb9
+  languageName: node
+  linkType: hard
+
+"@babel/compat-data@npm:^7.13.11, @babel/compat-data@npm:^7.17.10":
   version: 7.17.10
   resolution: "@babel/compat-data@npm:7.17.10"
   checksum: e85051087cd4690de5061909a2dd2d7f8b6434a3c2e30be6c119758db2027ae1845bcd75a81127423dd568b706ac6994a1a3d7d701069a23bf5cfe900728290b
@@ -14526,8 +14533,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "startproject@workspace:."
   dependencies:
-    "@babel/compat-data": 7.17.10
-    "@babel/preset-env": ^7.18.2
+    "@babel/compat-data": 7.18.8
+    "@babel/preset-env": ^7.18.6
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^11.2.7
     "@testing-library/user-event": ^12.8.3
