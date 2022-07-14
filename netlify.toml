@@ -1,0 +1,4 @@
+# A basic redirect to prevent 404 pages - necessary for deploying SPA's on Netlify
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
